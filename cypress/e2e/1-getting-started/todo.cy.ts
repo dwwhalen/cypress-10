@@ -123,6 +123,7 @@ describe('example to-do app', () => {
 
     it('can delete all completed tasks', () => {
 
+      cy.task("log", "CYPRESS_getResponseTime is: " + Cypress.env('CYPRESS_getResponseTime'));
       const pageName = "Delete a Task"
       if (Cypress.env('CYPRESS_getResponseTime')) {
         cy.mark(pageName)
@@ -147,14 +148,7 @@ describe('example to-do app', () => {
       if (Cypress.env('CYPRESS_getResponseTime')) {
 
         cy.measure(pageName).then((duration) => {
-          cy.task(
-            "log",
-            "[RESPONSE TIME] " +
-            pageName +
-              ": " +
-              (duration / 1000).toFixed(2) +
-              "s"
-          );
+          cy.task("log", "[RESPONSE TIME] " + pageName + ": " + (duration / 1000).toFixed(2) + "s");
           expect(duration).lessThan(500);
         });
       }
