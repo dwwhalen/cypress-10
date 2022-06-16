@@ -14,6 +14,9 @@ jobs:
 
   e2e-tests:
     runs-on: ubuntu-latest
+    container: 
+      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
+      options: --user 1001
 
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
