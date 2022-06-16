@@ -28,7 +28,7 @@ jobs:
           record: false
           browser: chrome
 
-      - name: "UI Tests - Chrome"
+      - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v4
         timeout-minutes: 5
         with:
