@@ -123,7 +123,7 @@ describe('example to-do app', () => {
 
     it('can delete all completed tasks', () => {
 
-      cy.task("log", "CYPRESS_getResponseTime is: " + Cypress.env('getResponseTime'));
+      cy.task("log", "getResponseTime is: " + Cypress.env('getResponseTime'));
       const pageName = "Delete a Task"
       if (Cypress.env('getResponseTime')) {
         cy.mark(pageName)
