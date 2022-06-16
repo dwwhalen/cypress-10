@@ -28,16 +28,14 @@ jobs:
         uses: cypress-io/github-action@v4
         timeout-minutes: 5
         with:
-          record: false
           browser: chrome
         env:
-          getResponseTime: false
+          CYPRESS_getResponseTime: true
 
       - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v4
         timeout-minutes: 5
         with:
-          record: false
           browser: firefox
         env:
-          getResponseTime: false
+          CYPRESS_getResponseTime: false
