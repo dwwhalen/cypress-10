@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 3000",
+    "test:unit": "vitest --environment jsdom",
+    "test:e2e": "cypress open",
+    "test:e2e:ci": "cypress run --browser firefox"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.1.0"
+    "cypress": "^10.1.0",
+    "typescript": "^4.7.3"
   }
 }
