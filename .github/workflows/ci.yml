@@ -40,7 +40,6 @@ jobs:
         timeout-minutes: 5
         with:
           browser: ${{ matrix.browser }}
-          group: ${{ matrix.group }}
         env:
           CYPRESS_getResponseTime: ${{ matrix.response_time }}
 
