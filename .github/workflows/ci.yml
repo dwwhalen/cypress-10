@@ -17,25 +17,37 @@ jobs:
     container: 
       image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
       options: --user 1001
-
+    strategy:
+      matrix:
+        include:
+          - browser: chrome
+            group: "UI - Chrome"
+            response-time: true
+          - browser: edge
+            group: "UI - Edge"
+            response-time: true
+          - browser: firefox
+            group: "UI - Firefox"
+            response_time: false
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: "UI Tests - Chrome"
+      - name: Cypress Tests -  - ${{ matrix.browser }}
         uses: cypress-io/github-action@v4
         timeout-minutes: 5
         with:
-          browser: chrome
+          browser: ${{ matrix.browser }}
+          group: ${{ matrix.group }}
         env:
-          CYPRESS_getResponseTime: true
+          CYPRESS_getResponseTime: ${{ matrix.response_time }}
 
-      - name: "UI Tests - Firefox"
-        uses: cypress-io/github-action@v4
-        timeout-minutes: 5
-        with:
-          browser: firefox
-        env:
-          CYPRESS_getResponseTime: false
+      # - name: "UI Tests - Firefox"
+      #   uses: cypress-io/github-action@v4
+      #   timeout-minutes: 5
+      #   with:
+      #     browser: firefox
+      #   env:
+      #     CYPRESS_getResponseTime: false
