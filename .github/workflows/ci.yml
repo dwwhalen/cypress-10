@@ -21,16 +21,14 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      # - name: "UI Tests - Chrome"
-      #   uses: cypress-io/github-action@v2
-      #   timeout-minutes: 10
-      #   with:
-      #     record: false
-      #     start: npm run preview
-      #     wait-on: "http://localhost:3000"
-      #     browser: chrome
+      - name: "UI Tests - Chrome"
+        uses: cypress-io/github-action@v2
+        timeout-minutes: 10
+        with:
+          record: false
+          browser: chrome
 
-      - name: "E2E tests with Cypress"
+      - name: "UI Tests - Firefox"
         run: |
           npm install
           npm run test:e2e:ci

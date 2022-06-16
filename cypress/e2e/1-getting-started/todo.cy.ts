@@ -123,7 +123,9 @@ describe('example to-do app', () => {
 
     it.only('can delete all completed tasks', () => {
 
-      cy.mark("Delete a Task")
+      if (Cypress.browser.name != 'firefox') {
+        cy.mark("Delete a Task")
+      }
       // First, let's click the "Clear completed" button
       // `contains` is actually serving two purposes here.
       // First, it's ensuring that the button exists within the dom.
@@ -140,7 +142,9 @@ describe('example to-do app', () => {
 
       // Finally, make sure that the clear button no longer exists.
       cy.contains('Clear completed').should('not.exist')
-      cy.measure("Delete a Task")
+      if (Cypress.browser.name != 'firefox') {
+        cy.measure("Delete a Task")
+      }
     })
   })
 })
