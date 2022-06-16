@@ -23,12 +23,14 @@ jobs:
 
       - name: "UI Tests - Chrome"
         uses: cypress-io/github-action@v4
-        timeout-minutes: 10
+        timeout-minutes: 5
         with:
           record: false
           browser: chrome
 
-      - name: "UI Tests - Firefox"
-        run: |
-          npm install
-          npm run test:e2e:ci
+      - name: "UI Tests - Chrome"
+        uses: cypress-io/github-action@v4
+        timeout-minutes: 5
+        with:
+          record: false
+          browser: chrome
