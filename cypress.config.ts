@@ -13,6 +13,6 @@ module.exports = defineConfig({
     baseUrl: 'https://example.cypress.io'
   },
   env: {
-    CYPRESS_getResponseTime: true
+    getResponseTime: true
   },
 });
