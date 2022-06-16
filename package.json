@@ -9,7 +9,8 @@
     "preview": "vite preview --port 3000",
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "cypress open",
-    "test:e2e:ci": "cypress run --browser firefox"
+    "test:e2e:ci": "cypress run --browser chrome",
+    "test:e2e:ci:firefox": "cypress run --browser firefox --env getResponseTime=false"
   },
   "keywords": [],
   "author": "",

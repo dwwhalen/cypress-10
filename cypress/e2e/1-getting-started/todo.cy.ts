@@ -123,7 +123,7 @@ describe('example to-do app', () => {
 
     it('can delete all completed tasks', () => {
 
-      if (Cypress.browser.name != 'firefox') {
+      if (Cypress.env('getResponseTime')) {
         cy.mark("Delete a Task")
       }
       // First, let's click the "Clear completed" button
@@ -142,7 +142,7 @@ describe('example to-do app', () => {
 
       // Finally, make sure that the clear button no longer exists.
       cy.contains('Clear completed').should('not.exist')
-      if (Cypress.browser.name != 'firefox') {
+      if (Cypress.env('getResponseTime')) {
         cy.measure("Delete a Task")
       }
     })

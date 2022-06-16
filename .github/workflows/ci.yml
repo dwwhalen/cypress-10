@@ -30,6 +30,8 @@ jobs:
         with:
           record: false
           browser: chrome
+        env:
+          getResponseTime: false
 
       - name: "UI Tests - Firefox"
         uses: cypress-io/github-action@v4
@@ -37,3 +39,5 @@ jobs:
         with:
           record: false
           browser: firefox
+        env:
+          getResponseTime: false
