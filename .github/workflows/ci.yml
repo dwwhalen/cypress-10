@@ -41,4 +41,4 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
         env:
-          GET_RESPONSE_TIME: ${{ matrix.get_response_time }}
+          CYPRESS_GET_RESPONSE_TIME: ${{ matrix.get_response_time }}
