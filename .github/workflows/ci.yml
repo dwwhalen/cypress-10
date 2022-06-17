@@ -22,10 +22,10 @@ jobs:
         include:
           - browser: chrome
             group: "UI - Chrome"
-            response-time: true
+            get_response_time: true
           - browser: edge
             group: "UI - Edge"
-            response-time: true
+            get_response_time: true
           - browser: firefox
             group: "UI - Firefox"
             get_response_time: false
