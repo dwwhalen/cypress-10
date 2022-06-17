@@ -28,25 +28,17 @@ jobs:
             response-time: true
           - browser: firefox
             group: "UI - Firefox"
-            response_time: false
+            get_response_time: false
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       
       - name: Check out repository code
         uses: actions/checkout@v2
 
-      - name: Cypress Tests -  - ${{ matrix.browser }}
+      - name: Cypress Tests - ${{ matrix.browser }}
         uses: cypress-io/github-action@v4
         timeout-minutes: 5
         with:
           browser: ${{ matrix.browser }}
         env:
-          CYPRESS_getResponseTime: ${{ matrix.response_time }}
-
-      # - name: "UI Tests - Firefox"
-      #   uses: cypress-io/github-action@v4
-      #   timeout-minutes: 5
-      #   with:
-      #     browser: firefox
-      #   env:
-      #     CYPRESS_getResponseTime: false
+          CYPRESS_getResponseTime: ${{ matrix.get_response_time }}
