@@ -10,7 +10,7 @@
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "cypress open",
     "test:e2e:ci": "cypress run --browser chrome",
-    "test:e2e:ci:firefox": "cypress run --browser firefox --env CYPRESS_getResponseTime=false"
+    "test:e2e:ci:firefox": "cypress run --browser firefox --env GET_RESPONSE_TIME=false"
   },
   "keywords": [],
   "author": "",

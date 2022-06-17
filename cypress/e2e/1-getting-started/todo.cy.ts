@@ -123,9 +123,9 @@ describe('example to-do app', () => {
 
     it('can delete all completed tasks', () => {
 
-      cy.task("log", "getResponseTime is: " + Cypress.env('getResponseTime'));
+      cy.task("log", "GET_RESPONSE_TIME is: " + Cypress.env('GET_RESPONSE_TIME'));
       const pageName = "Delete a Task"
-      if (Cypress.env('getResponseTime')) {
+      if (Cypress.env('GET_RESPONSE_TIME')) {
         cy.mark(pageName)
       }
       // First, let's click the "Clear completed" button
@@ -145,7 +145,7 @@ describe('example to-do app', () => {
       // Finally, make sure that the clear button no longer exists.
       cy.contains('Clear completed').should('not.exist')
 
-      if (Cypress.env('getResponseTime')) {
+      if (Cypress.env('GET_RESPONSE_TIME')) {
 
         cy.measure(pageName).then((duration) => {
           cy.task("log", "[RESPONSE TIME] " + pageName + ": " + (duration / 1000).toFixed(2) + "s");
